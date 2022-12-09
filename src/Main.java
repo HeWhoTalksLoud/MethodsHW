@@ -1,8 +1,19 @@
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println("Задача 1");
+        checkLeapYear(1980);
+        System.out.println();
 
-        System.out.println("Hello world!");
+        System.out.println("Задача 2");
+        printMobileMsg(2015, 1);
+        System.out.println();
+
+        System.out.println("Задача 3");
+        int daysToDeliver = cardDeliveryDays(10);
+        System.out.println(daysToDeliver == 0 ? "Доставки нет" :
+                "Потребуется дней: " + daysToDeliver);
+        System.out.println();
     }
 
     public static void checkLeapYear(int year) {
@@ -29,11 +40,13 @@ public class Main {
 
     public static int cardDeliveryDays(int distance) {
 
-        if (distance > 100) return 0; // Доставки нет
+        int days = 0;
 
-        int days;
+        if (distance < 20) days = 1;
+        else if (distance < 60) days = 2;
+                else if (distance < 100) days = 3;
 
-        if (distance < 20);
+        return days; // Если расстояние > 100, возвращаем 0 - доставки нет
 
     }
 
